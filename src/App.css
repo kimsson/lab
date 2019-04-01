@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  background: url('bg.jpg') no-repeat 50% fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+  animation: Background-fade 1s ease-in;
 }
 
 .App-logo {
@@ -9,8 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +26,10 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: white;
+}
+.App-link-hidden {
+  display: none;
 }
 
 @keyframes App-logo-spin {
@@ -29,5 +38,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes Background-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
