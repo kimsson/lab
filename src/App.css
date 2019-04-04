@@ -1,12 +1,16 @@
 .App {
   text-align: center;
-  background: url('bg.jpg') no-repeat 50% fixed;
-  background-size: cover;
   min-height: 100vh;
   display: flex;
   vertical-align: middle;
   justify-content: center;
-  animation: Background-fade 1s ease-in;
+}
+
+.App-fadeIn {
+  background:
+    url('bg.jpg') no-repeat 50% fixed;
+  background-size: cover;
+  animation: Background-fade 3s ease-in;
 }
 
 .App-logo {
@@ -32,6 +36,15 @@
   display: none;
 }
 
+.App-noselect {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

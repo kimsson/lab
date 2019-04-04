@@ -2,6 +2,7 @@
   "name": "sl",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://kimsson.com/iry",
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -23,6 +24,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@material-ui/core": "^3.9.3"
+    "@material-ui/core": "^3.9.3",
+    "react-sound": "^1.2.0"
   }
 }
