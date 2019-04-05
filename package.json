@@ -2,7 +2,7 @@
   "name": "sl",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kimsson.com/iry",
+  "homepage": "http://kimsson.com/",
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
