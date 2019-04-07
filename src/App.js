@@ -9,8 +9,7 @@ import './App.css';
 import ClassNames from 'classnames';
 import Sound from 'react-sound';
 
-class App extends Component {
-  
+function App() {
 
   const [query, setQuery] = useState('Hammarbyhojden');
 
@@ -114,3 +113,4 @@ class App extends Component {
     </Container>
   );
 }
+export default App;
