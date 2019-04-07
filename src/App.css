@@ -9,10 +9,10 @@
 
 .App-info {
   position: absolute;
+  padding: 8px 16px 8px 16px;
   bottom: 20px;
   right: 20px;
-  background-color: rgb(72, 71, 71);
-  
+  background-color: rgb(72, 71, 71); 
 }
 .App-fadeIn {
   background:

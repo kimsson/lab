@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background: black;
+  background: #7e9a9a;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-  font-size: 72px;
+  /* font-size: 72px; */
 }
