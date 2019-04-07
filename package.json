@@ -2,7 +2,7 @@
   "name": "sl",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kimsson.com/",
+  "homepage": "http://kimsson.com/nasa",
   "dependencies": {
     "react": "^16.8.4",
     "react-day-picker": "^7.3.0",
