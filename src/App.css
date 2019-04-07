@@ -6,6 +6,16 @@
   justify-content: center;
 }
 
+<<<<<<< Updated upstream
+=======
+.App-info {
+  position: absolute;
+  padding: 8px 16px 8px 16px;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(72, 71, 71); 
+}
+>>>>>>> Stashed changes
 .App-fadeIn {
   background:
     url('bg.jpg') no-repeat 50% fixed;
