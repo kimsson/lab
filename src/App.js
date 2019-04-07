@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-import React, { Component } from 'react';
-=======
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
@@ -8,42 +5,12 @@ import { Alert, Container, Modal, ListGroup } from 'react-bootstrap';
 
 import { TRAFIKLAB_REALTIME_DEPATURE, TRAFIKLAB_SEARCHABLE_STOPS } from './constants/keys';
 import 'react-day-picker/lib/style.css';
->>>>>>> Stashed changes
 import './App.css';
 import ClassNames from 'classnames';
 import Sound from 'react-sound';
 
 class App extends Component {
   
-<<<<<<< Updated upstream
-  constructor (props) {
-    super(props);
-  }
-  
-  render() {
-    const renderContent = () => this.state.content.split(" ");
-
-    const appClassName = ClassNames({
-      'App': true,
-      'App-fadeIn': true,
-    })
-    const linkClassName = ClassNames({
-      'App-link': true,
-      'App-link-hidden': true,
-    })
-    
-    return (
-      <div className={appClassName}>
-        <header className="App-header App-noselect">
-          <h1>Hello Dolly</h1>
-        </header>
-      </div>
-    );
-  }
-}
-
-export default App;
-=======
 
   const [query, setQuery] = useState('Hammarbyhojden');
 
@@ -147,4 +114,3 @@ export default App;
     </Container>
   );
 }
->>>>>>> Stashed changes
