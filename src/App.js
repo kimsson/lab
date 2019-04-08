@@ -23,7 +23,7 @@ function App() {
     const fetchData = async () => {
       setIsLoading(true);
       setIsError(false);
-
+      setDepatures({departures: {}})
       const maxResults = 10;
       const timeWindow = 20;
       const siteURL = `https://api.sl.se/api2/typeahead.jsonp?key=${TRAFIKLAB_SEARCHABLE_STOPS}&searchstring=${query}&stationsonly=${true}&maxresults=${maxResults}`;
@@ -55,7 +55,12 @@ function App() {
       }
       setIsLoading(false);
     };
+    // const fetchInterval = setInterval(() => fetchData(), 10000);
     fetchData();
+
+    // return clearInterval(fetchInterval);
+    
+
   }, [query]);
   
   const compareDates = (date) => {
@@ -71,46 +76,47 @@ function App() {
   }
 
   return (
-    <Container className="">
-      <Modal.Header className="">
+    <div className="shell-wrap">
+      <div className="shell-top-bar">
         <h1>Avgångar från </h1>
+      </div>
+      <div className="shell-body">Kims-MacBook-Pro:~ kimeriksson$ cd/
         <input
           type="text"
+          spellcheck="false"
           value={query}
           onChange={event => setQuery(event.target.value)} 
         />
-      </Modal.Header>
-      <div className="">
         { isLoading ? (<div>Loading ...</div>) : (
           <div>
             { departures.data ?  (
-              <ListGroup>
+              <ul>
               { departures.data.ResponseData.Metros.map((departure, index) => (
-                  <ListGroup.Item variant={compareDates(departure.ExpectedDateTime)} key={index.toString()} >
+                  <li className={compareDates(departure.ExpectedDateTime)} key={index.toString()} >
                     {console.log(compareDates(departure.ExpectedDateTime))}
                     <p>{`${departure.Destination} ${moment(moment(departure.ExpectedDateTime).format('YYYYMMDDkkmmss'), 'YYYYMMDDkkmmss').fromNow()}`}</p>
-                  </ListGroup.Item>
+                  </li>
                 ))
               }
-            </ListGroup>
+            </ul>
             ):(
-              <ListGroup>
-                <ListGroup.Item>
+              <ul>
+                <li>
                   <p>Empty result</p>
-                </ListGroup.Item>
-              </ListGroup>
+                </li>
+              </ul>
             )}
             
           </div>
           
         )}
+        {isError && 
+        <div variant="danger">
+          <p>Error: Invalid input</p>
+        </div>}
       </div>
-      {isError && 
-        <Alert variant="danger">
-          <Alert.Heading>No data accessable</Alert.Heading>
-          <p>Try again later</p>
-        </Alert>}
-    </Container>
+      
+    </div>
   );
 }
 export default App;
