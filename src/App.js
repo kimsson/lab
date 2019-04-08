@@ -13,6 +13,8 @@ function App() {
 
   const [query, setQuery] = useState('Hammarbyhojden');
 
+  const [station, setStation] = useState('');
+
   const [isLoading, setIsLoading] = useState(false);
 
   const [isError, setIsError] = useState(false);
@@ -24,6 +26,7 @@ function App() {
       setIsLoading(true);
       setIsError(false);
       setDepatures({departures: {}})
+      setStation('');
       const maxResults = 10;
       const timeWindow = 20;
       const siteURL = `https://api.sl.se/api2/typeahead.jsonp?key=${TRAFIKLAB_SEARCHABLE_STOPS}&searchstring=${query}&stationsonly=${true}&maxresults=${maxResults}`;
@@ -38,6 +41,9 @@ function App() {
           }
         );
         const siteId = siteResult.data.ResponseData[0].SiteId;
+        console.log(siteResult.data.ResponseData[0].Name);
+        const name = siteResult.data.ResponseData ? siteResult.data.ResponseData[0].Name : '';
+        setStation(name);
         if(siteId === undefined) return;
         
         const depatureURL = `https://api.sl.se/api2/realtimedeparturesV4.jsonp?key=${TRAFIKLAB_REALTIME_DEPATURE}&siteid=${siteId}&timewindow=${timeWindow}`;
@@ -78,7 +84,7 @@ function App() {
   return (
     <div className="shell-wrap">
       <div className="shell-top-bar">
-        <h1>Avgångar från </h1>
+        <h1>{`Avgångar från ${station}`}</h1>
       </div>
       <div className="shell-body">Kims-MacBook-Pro:~ kimeriksson$ cd/
         <input
@@ -112,7 +118,7 @@ function App() {
         )}
         {isError && 
         <div variant="danger">
-          <p>Error: Invalid input</p>
+          <p>$ Error: Invalid input</p>
         </div>}
       </div>
       
